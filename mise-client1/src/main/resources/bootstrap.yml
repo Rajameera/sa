@@ -1,0 +1,22 @@
+spring: 
+  application: 
+    name: mise-client1 
+#Active Profile - will relate to development properties file in the server. 
+#If this property is absent then default profile will be activated which is
+#the property file without any environment name at the end.
+  profiles:
+     active: dev1
+  cloud:
+    config:
+      uri: http://localhost:9999      
+server:
+  port: 8082
+  servlet:
+    context-path: /mise-client1
+#enables all actuators (including refresh)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
